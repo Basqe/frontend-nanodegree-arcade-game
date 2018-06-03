@@ -86,6 +86,7 @@ Player.prototype.reset = function(){
   this.x = 200;
   this.y = 380;
   this.score =  0;
+  this.lives = 3;
 }
 
 // Now instantiate your objects.
@@ -93,17 +94,17 @@ Player.prototype.reset = function(){
 const allEnemies=[new Enemy(-100, 60, 15), new Enemy(-100, 140, 20), new Enemy(-80, 220, 10)];
 
 // variable that holds possible X-axis positions on board
-const columns = [ -5, -100, -200, -300, -400];
+const columns = [-100, -200, -300, -400];
 let enemyX;
 // variable that holds possible Y-axis positions on board
-const rows = [ 60, 140, 220];
+const rows = [60, 140, 220];
 let enemyY;
 // variable that holds speed value
 let enemySpeed;
 
 // random locations & speed for bugs
 setInterval(function instances(){
-    enemyX = columns[Math.floor(Math.random() * 5)],
+    enemyX = columns[Math.floor(Math.random() * 4)],
     enemyY = rows[Math.floor(Math.random() * 3)],
     enemySpeed = Math.floor(Math.random() * 12),
     allEnemies.push(new Enemy(enemyX, enemyY, enemySpeed));
