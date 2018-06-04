@@ -14,7 +14,7 @@ class Enemy {
       // which will ensure the game runs at the same speed for
       // all computers.
       this.x += 50 * this.speed * dt;
-          //dostosuj hitboxa w pionie i poziomie
+      // checks collisions and takes action after it occurs
       if (this.x + 65 >= player.x && this.x <= player.x + 50 && this.y === player.y){
         player.lives--;
         player.softReset();
